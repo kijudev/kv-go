@@ -9,5 +9,6 @@ package kv
 type Store interface {
 	Get(key string) ([]byte, bool)
 	Set(key string, value []byte)
+	Has(key string) bool
 	Delete(key string) bool
 }
