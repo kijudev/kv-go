@@ -28,7 +28,7 @@ func (s *MutexStore) Get(key string) ([]byte, bool) {
 
 	out := make([]byte, len(value))
 	copy(out, value)
-	return value, true
+	return out, true
 }
 
 func (s *MutexStore) Set(key string, value []byte) {

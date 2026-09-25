@@ -84,7 +84,7 @@ func (s *shard) Get(key string) ([]byte, bool) {
 
 	out := make([]byte, len(value))
 	copy(out, value)
-	return value, true
+	return out, true
 }
 
 func (s *shard) Set(key string, value []byte) {
