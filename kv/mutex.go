@@ -3,13 +3,18 @@
 package kv
 
 import (
-	"os/exec"
 	"sync"
 )
 
 type MutexStore struct {
 	mutex sync.RWMutex
 	data  map[string][]byte
+}
+
+func NewMutexStore() *MutexStore {
+	return &MutexStore{
+		data: make(map[string][]byte),
+	}
 }
 
 func (s *MutexStore) Get(key string) ([]byte, bool) {
